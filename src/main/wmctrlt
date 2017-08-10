@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+this_file="$(readlink --canonicalize-missing "${BASH_SOURCE[0]}")"
+this_file_name="$(basename "${this_file}")"
+this_dir="$(dirname "${this_file}")"
+
+process_seq_num="$1"
+
+if [ "$process_seq_num" != "" ]; then
+	cur_process_id="$(xdotool getactivewindow)"
+	cur_process_id_hex="$(printf "0x%.8x" "$cur_process_id")"
+	tgt_process_id_hex="$(wmctrl -l | sed -En "${process_seq_num}p" | awk "{print \$1}")"
+	if [ "$cur_process_id_hex" == "$tgt_process_id_hex" ]; then # 相同则最小化
+		xdotool windowminimize "$cur_process_id"
+	elif [ "$cur_process_id_hex" != "$tgt_process_id_hex" ]; then
+		wmctrl -ia "$tgt_process_id_hex"
+	fi
+elif [ "$process_seq_num" == "" ]; then
+	cat "$this_file"
+fi

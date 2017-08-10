@@ -65,23 +65,35 @@
 #"rxvt"
 #  Control + b:2 + Release
 
-"n=1; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 1"
 Mod4 + 1
 
-"n=2; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 2"
 Mod4 + 2
 
-"n=3; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 3"
 Mod4 + 3
 
-"n=4; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 4"
 Mod4 + 4
 
-"n=5; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 5"
 Mod4 + 5
 
-"n=6; wmctrl -l | sed -En "${n}p" | awk "{print $1}" | xargs -i wmctrl -ia {}"
+"wmctrlt 6"
 Mod4 + 6
+
+"wmctrlt 7"
+Mod4 + 7
+
+"wmctrlt 8"
+Mod4 + 8
+
+"wmctrlt 9"
+Mod4 + 9
+
+"wmctrlt 10"
+Mod4 + 10
 
 ##################################
 # End of xbindkeys configuration #
